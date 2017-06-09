@@ -27,9 +27,6 @@ public class Node {
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="lastName")
-	private String lastName;
-	
 	@OneToMany(cascade=CascadeType.REMOVE, fetch=FetchType.EAGER, mappedBy="node")
 	private Set<Link> link = new HashSet<>();
 	
