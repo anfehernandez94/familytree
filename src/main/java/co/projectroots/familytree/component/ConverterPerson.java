@@ -1,5 +1,8 @@
 package co.projectroots.familytree.component;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Component;
 
 import co.projectroots.familytree.entity.Person;
@@ -29,5 +32,22 @@ public class ConverterPerson {
 		
 		return person ;
 	}
+	
+	public List<ModelPerson> listPerson2ListModelPerson(List<Person> listPerson){
+		List<ModelPerson> listModelPerson = new ArrayList<>();
+		for(Person person : listPerson){
+			listModelPerson.add(person2ModelPerson(person));
+		}
+		return listModelPerson;
+	}
+	
+	public List<Person> listModelPerson2ListPerson(List<ModelPerson> listModelPerson){
+		List<Person> listPerson = new ArrayList<>();
+		for(ModelPerson modelPerson : listModelPerson){
+			listPerson.add(modelPerson2Person(modelPerson));
+		}
+		return listPerson;
+	}
+	
 	
 }

@@ -10,4 +10,6 @@ import co.projectroots.familytree.entity.Person;
 @Repository("repositoryJPAPerson")
 public interface RepositoryJPAPerson extends JpaRepository<Person, Serializable>{
 
+	Person findById(int id);
+	
 }
