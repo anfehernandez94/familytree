@@ -10,6 +10,7 @@ public interface ServicePerson {
 	boolean deletePerson(ModelPerson modelPerson);
 	ModelPerson updatePerson(ModelPerson modelPerson);
 	ModelPerson selectPersonById(int id);
+	List<ModelPerson> selectPersonByFirstName(String firstName);
 	List<ModelPerson> selectAllPerson();
 	
 }

@@ -37,6 +37,7 @@ public class ServiceImplPerson implements ServicePerson{
 
 	@Override
 	public ModelPerson updatePerson(ModelPerson modelPerson) {
+		Person person = repositoryJPAPerson.save(converterPerson.modelPerson2Person(modelPerson));
 		return this.addPerson(modelPerson);
 	}
 
@@ -50,6 +51,13 @@ public class ServiceImplPerson implements ServicePerson{
 	public ModelPerson selectPersonById(int id) {
 		Person person = repositoryJPAPerson.findById(id);
 		return converterPerson.person2ModelPerson(person);
+	}
+
+	@Override
+	public List<ModelPerson> selectPersonByFirstName(String firstName) {
+		List<Person> listPerson = repositoryJPAPerson.findAllByFirstName(firstName);
+		List<ModelPerson> listModelPerson = converterPerson.listPerson2ListModelPerson(listPerson);
+		return listModelPerson;
 	}
 
 }

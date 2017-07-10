@@ -2,18 +2,23 @@ package co.projectroots.familytree.model;
 
 import java.util.Date;
 
+import javax.validation.constraints.NotNull;
+
 public class ModelPerson {
 
 	private int id;
+	@NotNull
 	private String firstName;
+	@NotNull
 	private String lastName;
+	@NotNull
 	private Date birthDate;
+	@NotNull
 	private String birthPlace;
 	
 	public ModelPerson(){}
 	
 	public ModelPerson(int id, String firstName, String lastName, Date birthDate, String birthPlace) {
-		super();
 		this.id = id;
 		this.firstName = firstName;
 		this.lastName = lastName;

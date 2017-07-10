@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Person</title>
+</head>
+<body>
+	
+	<h1>People</h1>
+	<br />
+	<div>
+		<form action="#" th:action="@{/person/addperson}" th:object="${modelPerson}" method="post">
+			First Name:<input type="text" th:field="*{firstName}"></input><br/>
+			Last Name:<input type="text" th:field="*{lastName}"></input><br/>
+			Birthdate:<input type="date" th:field="*{birthDate}"></input><br/>
+			Birthplace:<input type="text" th:field="*{birthPlace}"></input><br/>					
+			<button type="submit">
+				<span>Add</span>
+			</button>
+		</form>
+	</div>
+	
+
+		<a href="#" th:href="@{/person/deleteperson}">		
+			<button type="button">Delete</button>
+		</a>  
+	
+	<br />
+	<table>
+		<thead>
+			<tr>
+				<th>ID</th>
+				<th>FIRSTNAME</th>
+				<th>LASTNAME</th>
+				<th>BIRTHDATE</th>
+				<th>BIRTHPLACE</th>
+			</tr>
+		</thead>
+		<tbody>
+ 			<tr th:each="person:${listPerson}">
+				<td th:text="${person.id}"></td>
+				<td th:text="${person.firstName}"></td>
+				<td th:text="${person.lastName}"></td>
+				<td th:text="${person.birthDate}"></td>
+				<td th:text="${person.birthPlace}"></td>
+			</tr> 
+		</tbody>
+	</table>
+
+</body>
+</html>

@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import co.projectroots.familytree.entity.Person;
 import co.projectroots.familytree.model.ModelPerson;
 
-@Component("personConverter")
+@Component("converterPerson")
 public class ConverterPerson {
 
 	public ModelPerson person2ModelPerson(Person person){
